@@ -7,3 +7,4 @@ drf-yasg
 dj-database-url
 django-oauth-toolkit
 urllib3==1.26.15
+gunicorn

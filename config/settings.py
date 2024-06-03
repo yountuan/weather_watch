@@ -158,16 +158,16 @@ SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'OAuth2': {
             'type': 'oauth2',
-            'authorizationUrl': 'https://example.com/oauth/authorize',  # Replace with your auth URL
-            'tokenUrl': 'https://example.com/oauth/token',  # Replace with your token URL
-            'flow': 'accessCode',  # Or 'application', 'password', 'implicit' based on your grant type
+            'authorizationUrl': 'http://example.com/oauth/authorize/',
+            'tokenUrl': 'http://example.com/oauth/token/',
+            'flow': 'accessCode',
             'scopes': {
                 'read': 'Read access to protected resources',
                 'write': 'Write access to protected resources',
-                'openid': 'OpenID Connect scope'
             }
         }
-    }
+    },
+    'USE_SESSION_AUTH': False,
 }
 
 REST_FRAMEWORK = {

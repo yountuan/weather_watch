@@ -22,6 +22,7 @@ from oauth2_provider.views import TokenView, RevokeTokenView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
+from goods.views import swagger_ui
 
 router = DefaultRouter()
 router.register(r'sensors', SensorsViewSet)
@@ -30,12 +31,9 @@ router.register(r'alerts', AlertsViewSet)
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Your API",
+        title="EcoTrack API",
         default_version='v1',
-        description="API documentation",
-        terms_of_service="https://example.com/terms/",
-        contact=openapi.Contact(email="contact@example.com"),
-        license=openapi.License(name="BSD License"),
+        description="API for managing air quality sensors",
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -49,4 +47,5 @@ urlpatterns = [
     path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
 ]
