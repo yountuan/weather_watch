@@ -1,0 +1,9 @@
+django
+djangorestframework
+psycopg2-binary
+python-decouple
+white-noise
+drf-yasg
+dj-database-url
+django-oauth-toolkit
+urllib3==1.26.15
