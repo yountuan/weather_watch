@@ -22,7 +22,6 @@ from oauth2_provider.views import TokenView, RevokeTokenView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from goods.views import swagger_ui
 
 router = DefaultRouter()
 router.register(r'sensors', SensorsViewSet)

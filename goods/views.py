@@ -12,37 +12,12 @@ class SensorsViewSet(viewsets.ModelViewSet):
     serializer_class = SensorsSerializer
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(
-        security=[{'OAuth2': ['read']}]
-    )
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
 class DataViewSet(viewsets.ModelViewSet):
     queryset = Data.objects.all()
     serializer_class = DataSerializer
     permission_classes = [IsAuthenticated]
 
-    @swagger_auto_schema(
-        security=[{'OAuth2': ['read']}]
-    )
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
 class AlertsViewSet(viewsets.ModelViewSet):
     queryset = Alerts.objects.all()
     serializer_class = AlertsSerializer
     permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(
-        security=[{'OAuth2': ['read']}]
-    )
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
-
-# views.py
-
-from django.shortcuts import render
-
-def swagger_ui(request):
-    return render(request, 'swagger-ui.html')
